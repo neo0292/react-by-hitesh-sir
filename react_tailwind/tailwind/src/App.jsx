@@ -11,7 +11,8 @@ function App() {
    <>
    <div className='bg-green-500 text-black rounded-xl p-4 mb-4'><h1>hello Tailwind</h1></div>
 
-   <Card></Card>
+   <Card username = 'sachin' btntext='take me'></Card>
+   <Card username = 'rahul'></Card>
 
   
 
