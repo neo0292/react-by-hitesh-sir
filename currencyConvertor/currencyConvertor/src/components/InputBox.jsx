@@ -24,7 +24,7 @@ const InputBox = ({
         <input 
           type="number"
           placeholder='Amount'
-          amount={amount}
+          value={amount}
           id= {amountInputId}
           disabled={amountDisabled}
           className='outline-none bg-transparent w-full py-1.5'
@@ -43,7 +43,7 @@ const InputBox = ({
           disabled = {currencyDisabled}
         >
           {currencyOptions.map((currency)=>(
-            <option value='{currency}' key = '{currency}'>{currency}</option>
+            <option key = {currency} value={currency} >{currency}</option>
           ))}
         </select>
 

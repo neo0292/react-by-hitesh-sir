@@ -23,7 +23,7 @@ function App() {
   }
 
   const convert = () => {
-  setConvertedAmount(Number(amount*currencyInfo[to]))
+  setConvertedAmount((Number(amount*currencyInfo[to]).toFixed(5)))
   console.log(`converted amount from convert function : ${convertedAmount}`)
   }
 
