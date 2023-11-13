@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { InputBox } from './components'
 import useCurrencyInfo from './hooks/useCurrencyInfo'
 
-import './App.css'
+
 
 function App() {
   const [amount, setAmount] = useState(0)
@@ -12,7 +12,7 @@ function App() {
 
   // call custom hook with argument 'from' variable 
   const currencyInfo = useCurrencyInfo(from) 
-
+  
   const options = Object.keys(currencyInfo)
 
   const swap =() => {
@@ -23,7 +23,8 @@ function App() {
   }
 
   const convert = () => {
-  setConvertedAmount(amount*currencyInfo[to])
+  setConvertedAmount(Number(amount*currencyInfo[to]))
+  console.log(`converted amount from convert function : ${convertedAmount}`)
   }
 
   
@@ -31,9 +32,9 @@ function App() {
    <>
    <div 
     className='w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat '
-    style={{ backgroundImage:('https://images.pexels.com/photos/3483098/pexels-photo-3483098.jpeg?auto=compress&cs=tinysrgb&w=600')}}>
+    style={{ backgroundImage : 'url("https://images.unsplash.com/photo-1642790551116-18e150f248e3?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")'}}>
 
-    <div className='w-full'>
+    <div className='w-full flex flex-wrap justify-center	'>
       <div className='w-full max-w-md max-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30'>
         <form 
           onSubmit={(e)=>{
@@ -60,6 +61,25 @@ function App() {
               >Swap</button>
 
             </div>
+
+            <div className='w-full mt-1 mb-4'>
+              <InputBox
+                label={to}
+                amount={convertedAmount}
+                
+                currencyOptions={options}
+                onCurrencyChange={(currency)=>(setTo(currency))}
+                selectCurrency={to}
+                 amountDisabled
+              
+              ></InputBox>
+              
+            </div>
+
+            <button type='submit' className='w-full bg-blue-600 text-white px-4 py-3 rounded-lg'
+            onClick={()=>(convert())}
+            >Convert</button>
+            {console.log(`converted amount 2nd inputbox:${convertedAmount}`) }
 
 
           </form>

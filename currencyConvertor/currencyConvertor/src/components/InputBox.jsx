@@ -24,6 +24,7 @@ const InputBox = ({
         <input 
           type="number"
           placeholder='Amount'
+          amount={amount}
           id= {amountInputId}
           disabled={amountDisabled}
           className='outline-none bg-transparent w-full py-1.5'
