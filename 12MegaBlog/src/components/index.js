@@ -14,5 +14,6 @@ export {
   Logo,
   LogoutBtn,
   RTE,
+  Select,
 
 }
