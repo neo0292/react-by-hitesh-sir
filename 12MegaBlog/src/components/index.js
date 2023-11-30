@@ -11,6 +11,7 @@ import PostCard from './PostCard';
 import Input from './Input';
 import PostForm from './post-form/PostForm';
 import AuthLayout from './AuthLayout'; //default export is Protected 
+import Button from './Button';
 
 
 export {
@@ -27,5 +28,6 @@ export {
   Input,
   PostForm,
   AuthLayout,
+  Button,
 
 }
