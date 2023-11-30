@@ -10,6 +10,7 @@ import Login from './Login';
 import PostCard from './PostCard';
 import Input from './Input';
 import PostForm from './post-form/PostForm';
+import AuthLayout from './AuthLayout'; //default export is Protected 
 
 
 export {
@@ -25,5 +26,6 @@ export {
   PostCard,
   Input,
   PostForm,
+  AuthLayout,
 
 }
