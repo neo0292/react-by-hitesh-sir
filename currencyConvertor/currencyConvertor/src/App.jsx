@@ -66,11 +66,10 @@ function App() {
               <InputBox
                 label={to}
                 amount={convertedAmount}
-                
                 currencyOptions={options}
                 onCurrencyChange={(currency)=>(setTo(currency))}
                 selectCurrency={to}
-                 amountDisabled
+                amountDisabled
               
               ></InputBox>
               
@@ -78,7 +77,7 @@ function App() {
 
             <button type='submit' className='w-full bg-blue-600 text-white px-4 py-3 rounded-lg'
             onClick={()=>(convert())}
-            >Convert</button>
+            >Convert {from} to {to}</button>
             {console.log(`converted amount 2nd inputbox:${convertedAmount}`) }
 
 
