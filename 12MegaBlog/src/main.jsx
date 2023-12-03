@@ -50,8 +50,9 @@ const router = createBrowserRouter([
       {
         path: '/all-posts',
         element: (
-          <AuthLayout authentication>  //another authentication syntax for true value
-            {" "}
+          //another authentication syntax for true value
+          <AuthLayout authentication>  
+            
             <AllPosts/>
           </AuthLayout>  
         ),

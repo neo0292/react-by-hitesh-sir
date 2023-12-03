@@ -15,6 +15,7 @@ export class Service {
    }
 
    async createPost({title, slug, content, featuredImage,status,userId}){
+    console.log(`from createPost config.js file title: ${title} slug: ${slug} content: ${content}, featuredImage: ${featuredImage} status: ${status} userId: ${userId}`);
     try {
       return this.databases.createDocument(
         conf.appwriteDatabaseId,
@@ -24,7 +25,7 @@ export class Service {
         );
       
     } catch (error) {
-      console.log('Appwrite Serice::CreatePost:: error: ' + error);
+      console.log('Appwrite Serice::CreatePost:: error: ' , error);
     }
    
    }
@@ -39,7 +40,7 @@ export class Service {
       );
       
     } catch (error) {
-      console.log('Appwrite Serice::UpdatePost:: error: ' + error);
+      console.log('Appwrite Serice::UpdatePost:: error: ' , error);
     }
    }
 
@@ -52,7 +53,7 @@ export class Service {
         );
       return true;  
     } catch (error) {
-      console.log('Appwrite Serice::DeletePost:: error: ');
+      console.log('Appwrite Serice::DeletePost::', error);
       return false; 
     }
    }
@@ -65,7 +66,7 @@ export class Service {
         slug
       )
     } catch (error) {
-      console.log('Appwrite Serice::GetPost:: error: ');
+      console.log('Appwrite Serice::GetPost::', error);
       return false; 
       
     }
@@ -79,7 +80,7 @@ export class Service {
         queries,
       )
     } catch (error) {
-      console.log('Appwrite Serice::GetAllPost:: error: ');
+      console.log('Appwrite Serice::GetAllPost::', error);
       return false; 
       
     }
@@ -95,7 +96,7 @@ export class Service {
         file
       );
     } catch (error) {
-      console.log('Appwrite Serice::fileUpload:: error: ');
+      console.log('Appwrite Serice::fileUpload::', error);
       return false;
     }
    }
@@ -107,7 +108,7 @@ export class Service {
         fileId);
       return true
     } catch (error) {
-      console.log('Appwrite Serice::deleteFile:: error: ');
+      console.log('Appwrite Serice::deleteFile::', error);
       return false;
     }
    }
@@ -119,7 +120,7 @@ export class Service {
         fileId);
       
     } catch (error) {
-      console.log('Appwrite Serice::getFilePreview:: error: ');
+      console.log('Appwrite Serice::getFilePreview::', error );
       
     }
    }

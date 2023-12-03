@@ -5,22 +5,7 @@ import { useSelector } from 'react-redux'
 
 
 function Header() {
-
-//   const authStatus = useSelector((state) => state.auth.status);
-// console.log(`Redux State - Auth Status: ${authStatus}`);
-
-// const revAuth = !authStatus;
-// console.log(`Negation of Auth Status: ${revAuth}`);
-
-
   const authStatus = useSelector((state)=>state.auth.status);
-  console.log(authStatus);
-  console.log(typeof authStatus);
-  console.log(typeof !authStatus);
-  console.log(`AuthStatis: ${authStatus}`);
-   const revAuth = !authStatus;
-  console.log(`Rev: ${!authStatus}`);
-
 
   const navigate = useNavigate();
   const navItems = [
@@ -50,8 +35,7 @@ function Header() {
       active: authStatus,
   },]
 
-  {navItems.map((item)=> 
-    console.log('header item status:',item.name +'   '  + item.active))}
+  
 
   return (
     <header className='py-3 shadow bg-gray-500'>
@@ -66,7 +50,7 @@ function Header() {
           
             {navItems.map((item)=> 
               item.active ? 
-              (<li key ={item.name}>{console.log(item.name+' '+item.active)}
+              (<li key ={item.name}>
                 <button onClick={()=>navigate(item.slug)}
                   className='inline-block px-2 py-2 duration-200 hover:bg-blue-100 rounded-full'>
                   {item.name}
